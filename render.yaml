@@ -3,14 +3,9 @@ services:
     name: motorsports-api
     env: python
     plan: free
-    buildCommand: |
-      python3 -m venv venv && \
-      . venv/bin/activate && \
-      pip install -r requirements.txt
-    startCommand: |
-      . venv/bin/activate && \
-      python3 backend/app.py
+    buildCommand: "pip3 install -r requirements.txt"
+    startCommand: "gunicorn backend.app:app --bind 0.0.0.0:$PORT"
     autoDeploy: true
     branch: main
-    region: Virginia (US East)
+    region: oregon
     rootDir: .
