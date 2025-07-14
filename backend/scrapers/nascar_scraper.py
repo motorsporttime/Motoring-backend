@@ -1,1 +1,0 @@
-# NASCAR scraper placeholder

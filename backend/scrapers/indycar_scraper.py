@@ -1,1 +1,0 @@
-# IndyCar scraper placeholder
