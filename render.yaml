@@ -3,9 +3,14 @@ services:
     name: motorsports-api
     env: python
     plan: free
-    buildCommand: "pip install -r requirements.txt"
-    startCommand: "python3 backend/app.py"
+    buildCommand: |
+      python3 -m venv venv && \
+      . venv/bin/activate && \
+      pip install -r requirements.txt
+    startCommand: |
+      . venv/bin/activate && \
+      python3 backend/app.py
     autoDeploy: true
     branch: main
-    region: oregon
+    region: Virginia (US East)
     rootDir: .
